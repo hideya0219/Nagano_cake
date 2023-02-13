@@ -1,2 +1,49 @@
-<h1>Admin::Items#new</h1>
-<p>Find me in app/views/admin/items/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <h4 class=""><sapn class="bg-secondary">商品新規登録</sapn></h4>
+      <%= form_with model: @item, url: admin_items_path do |f| %>
+        <table>
+          <tr>
+            <th class="d-flex">
+              <p>商品画像</p>
+              <p><%= f.file_field :image, accept: "image/*" %></p>
+            </th>
+          </tr>
+          <tr>
+            <th class="d-flex">
+              <p>商品名</p>
+              <p><%= f.text_field :name %></p>
+            </th>
+          </tr>
+          <tr>
+            <th class="d-flex">
+              <p>商品説明</p>
+              <p><%= f.text_area :introduction %></p>
+            </th>
+          </tr>
+          <tr>
+            <th class="d-flex">
+              <p>税抜き価格</p>
+              <p><%= f.text_field :price %>円</p>
+            </th>
+          </tr>
+          <tr>
+            <th class="d-flex">
+              <p>販売ステータス</p>
+              <p>
+                <%= f.radio_button :is_active, "sale" %>
+                <%= f.label :is_active, "販売中" %>
+                <%= f.radio_button :is_active, "sold_out" %>
+                <%= f.label :is_active, "販売停止中" %>
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th><%= f.submit '新規登録', class: 'btn btn-success' %></th>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
