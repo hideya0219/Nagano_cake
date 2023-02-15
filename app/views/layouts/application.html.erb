@@ -21,25 +21,48 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-           <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">商品一覧</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">新規登録</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ログイン</a>
-              </li>
+            <ul class="navbar-nav ml-auto">
+              <% if admin_signed_in? %>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">商品一覧</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">会員一覧</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">注文履歴一覧</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ジャンル一覧</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ログアウト</a>
+                </li><br>
+                <!--form-->
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">商品一覧</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">新規登録</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">ログイン</a>
+                </li>
             </ul></br>
-            <!--form-->
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              <!--form-->
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            <% end %>
           </div>
         </div>
       </nav>
