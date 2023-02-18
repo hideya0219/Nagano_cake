@@ -1,2 +1,39 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h4><span class="bg-secondary"><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</span></h4>
+      <table class="table">
+        <tr>
+          <th><p>会員ID</p></th>
+          <th><p><%= @customer.id %></p></th>
+        </tr>
+        <tr>
+          <th><p>氏名</p></th>
+          <th><p><%= @customer.last_name %><%= @customer.first_name %></p></th>
+        </tr>
+        <tr>
+          <th><p>フリガナ</p></th>
+          <th><p><%= @customer.last_name_kana %><%= @customer.first_name_kana %></p></th>
+        </tr>
+        <tr>
+          <th><p>郵便番号</p></th>
+          <th><p><%= @customer.postal_code %></p></th>
+        <tr>
+          <th><p>住所</p></th>
+          <th><p><%= @customer.address %></p></th>
+        <tr>
+          <th><p>電話番号</p></th>
+          <th><p><%= @customer.telephone %></p></th>
+        <tr>
+          <th><p>メールアドレス</p></th>
+          <th><p><%= @customer.email %></p></th>
+        <tr>
+          <th><p>会員ステータス</p></th>
+          <th><p>?</p></th>
+        </tr>
+      </table>
+      <%= link_to "編集する", edit_admin_customer_path, class: 'btn btn-success' %>
+      <%= link_to "注文履歴一覧を見る", edit_admin_customer_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

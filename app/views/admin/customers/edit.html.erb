@@ -1,2 +1,46 @@
-<h1>Admin::Customers#edit</h1>
-<p>Find me in app/views/admin/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <h4><span class="bg-secondary"><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報編集者</span></h4>
+      <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch  do |f| %>
+        <table>
+          <tr>
+            <th>会員ID</th>
+            <th><p><%= @customer.id %></p></th>
+          </tr>
+          <tr>
+            <th>氏名</th>
+            <th><%= f.text_field :last_name %><%= f.text_field :first_name %></th>
+          </tr>
+          <tr>
+            <th>フリガナ</th>
+            <th><%= f.text_field :last_name_kana %><%= f.text_field :first_name_kana %></th>
+          </tr>
+          <tr>
+            <th>郵便番号</th>
+            <th><%= f.text_field :postal_code %></th>
+          </tr>
+          <tr>
+            <th>住所</th>
+            <th><%= f.text_field :address %></th>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <th><%= f.text_field :price %>円</th>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <th><%= f.text_field :price %>円</th>
+          </tr>
+          <tr>
+            <th>会員ステータス</th>
+            <th><%= f.text_field :price %>円</th>
+          </tr>
+          <tr>
+            <th><%= f.submit '変更を保存', class: 'btn btn-success' %></th>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
